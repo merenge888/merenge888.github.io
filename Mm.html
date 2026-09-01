@@ -2,121 +2,242 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>メレンゲ工房｜ハンドメイド作品</title>
-  <meta name="description" content="メレンゲ工房のハンドメイド作品ギャラリー。かわいい作品からダークでかっこいい作品まで、一つひとつ心を込めて制作しています。">
-  <meta property="og:title" content="メレンゲ工房">
-  <meta property="og:description" content="一つひとつ心を込めて制作するハンドメイド作品。">
-  <meta property="og:image" content="assets/pink-pearl.jpg">
-  <meta name="theme-color" content="#f7e8ec">
+  <meta
+    name="description"
+    content="メレンゲ工房のハンドメイド作品ギャラリー。かわいい作品からダークでかっこいい作品まで、一つひとつ心を込めて制作しています。"
+  >
+
   <style>
-    :root{--bg:#fffafc;--ink:#3b3035;--muted:#806f76;--accent:#d88da5;--card:#fff;--line:#f0dce3}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:var(--ink);background:var(--bg);line-height:1.8}
-    a{color:inherit;text-decoration:none}
-    header{position:sticky;top:0;z-index:10;background:rgba(255,250,252,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-    .brand{font-weight:800;letter-spacing:.08em}
-    .navlinks{display:flex;gap:16px;font-size:14px}
-    .hero{max-width:1100px;margin:auto;padding:62px 20px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
-    .eyebrow{font-size:13px;letter-spacing:.2em;color:var(--accent);font-weight:700}
-    h1{font-size:clamp(42px,8vw,78px);line-height:1.05;margin:12px 0 18px;letter-spacing:.04em}
-    .lead{color:var(--muted);font-size:17px;max-width:36em}
-    .heroimg{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;box-shadow:0 18px 45px rgba(96,57,72,.14)}
-    .buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-weight:700;border:1px solid var(--line);background:white}
-    .btn.primary{background:var(--ink);color:white;border-color:var(--ink)}
-    section{max-width:1100px;margin:auto;padding:64px 20px}
-    .section-title{text-align:center;margin-bottom:28px}
-    .section-title h2{font-size:32px;margin:0 0 6px}
-    .section-title p{color:var(--muted);margin:0}
-    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 8px 24px rgba(96,57,72,.06)}
-    figure:first-child{grid-column:1/-1}
-    figure img{display:block;width:100%;height:420px;object-fit:cover}
-    figure:first-child img{height:520px}
-    figcaption{padding:16px 18px}
-    figcaption strong{display:block;font-size:18px}
-    figcaption span{color:var(--muted);font-size:14px}
-    .about{background:white;border:1px solid var(--line);border-radius:26px;padding:30px}
-    .about p{color:var(--muted)}
-    footer{text-align:center;padding:34px 20px 52px;color:var(--muted);font-size:13px}
-    @media(max-width:760px){
-      .navlinks{display:none}
-      .hero{grid-template-columns:1fr;padding-top:40px}
-      .heroimg{aspect-ratio:1/1}
-      .gallery{grid-template-columns:1fr}
-      figure:first-child{grid-column:auto}
-      figure img,figure:first-child img{height:auto;aspect-ratio:4/5}
-      section{padding-top:48px;padding-bottom:48px}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #fffaf8;
+    }
+
+    body {
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        "Yu Gothic",
+        Meiryo,
+        serif;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      max-width: 1015px;
+      margin: 0 auto;
+    }
+
+    .page-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hit {
+      position: absolute;
+      display: block;
+      overflow: hidden;
+      color: transparent;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .hit:focus-visible {
+      outline: 3px solid #d98997;
+      outline-offset: 2px;
+      border-radius: 16px;
+    }
+
+    /* 上部メニュー */
+    .home {
+      left: 53.7%;
+      top: 1.8%;
+      width: 6%;
+      height: 3.4%;
+    }
+
+    .works {
+      left: 61.4%;
+      top: 1.8%;
+      width: 7%;
+      height: 3.4%;
+    }
+
+    .about {
+      left: 70.6%;
+      top: 1.8%;
+      width: 9%;
+      height: 3.4%;
+    }
+
+    .sns {
+      left: 82.7%;
+      top: 1.8%;
+      width: 11%;
+      height: 3.4%;
+    }
+
+    /* 作品カテゴリー */
+    .c1 {
+      left: 8.1%;
+      top: 51.1%;
+      width: 24.7%;
+      height: 10.3%;
+    }
+
+    .c2 {
+      left: 36.9%;
+      top: 51.1%;
+      width: 24.7%;
+      height: 10.3%;
+    }
+
+    .c3 {
+      left: 65.6%;
+      top: 51.1%;
+      width: 24.7%;
+      height: 10.3%;
+    }
+
+    .c4 {
+      left: 8.1%;
+      top: 63%;
+      width: 24.7%;
+      height: 10.3%;
+    }
+
+    .c5 {
+      left: 36.9%;
+      top: 63%;
+      width: 24.7%;
+      height: 10.3%;
+    }
+
+    .c6 {
+      left: 65.6%;
+      top: 63%;
+      width: 24.7%;
+      height: 10.3%;
+    }
+
+    /* ページ内リンクの移動先 */
+    .anchor-point {
+      position: absolute;
+      left: 0;
+      width: 1px;
+      height: 1px;
+      pointer-events: none;
+    }
+
+    #works {
+      top: 48%;
+    }
+
+    #about {
+      top: 27%;
+    }
+
+    #sns {
+      top: 87%;
     }
   </style>
 </head>
+
 <body>
-<header>
-  <div class="nav">
-    <a class="brand" href="#top">メレンゲ工房</a>
-    <nav class="navlinks">
-      <a href="#works">作品</a>
-      <a href="#about">工房について</a>
-      <a href="#links">ショップ・SNS</a>
-    </nav>
-  </div>
-</header>
+  <main class="page">
+    <img
+      class="page-image"
+      src="images/homepage-exact.png"
+      alt="メレンゲ工房のハンドメイド作品ギャラリー"
+    >
 
-<main id="top">
-  <div class="hero">
-    <div>
-      <div class="eyebrow">HANDMADE SHOP</div>
-      <h1>メレンゲ工房</h1>
-      <p class="lead">かわいい作品から、ダークでかっこいい作品まで。ひとつひとつ心を込めて制作しています。</p>
-      <div class="buttons" id="links">
-        <a class="btn primary" href="https://jp.mercari.com/user/profile/668431290" target="_blank" rel="noopener">メルカリで見る</a>
-        <a class="btn" href="https://www.instagram.com/merenge_2525" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn" href="https://www.tiktok.com/@merenge888" target="_blank" rel="noopener">TikTok</a>
-      </div>
-    </div>
-    <img class="heroimg" src="assets/pink-pearl.jpg" alt="パールとレースのハンドメイド作品">
-  </div>
+    <!-- ページ内リンクの移動先 -->
+    <span id="works" class="anchor-point" aria-hidden="true"></span>
+    <span id="about" class="anchor-point" aria-hidden="true"></span>
+    <span id="sns" class="anchor-point" aria-hidden="true"></span>
 
-  <section id="works">
-    <div class="section-title">
-      <h2>作品ギャラリー</h2>
-      <p>写真をタップすると大きく表示できます。</p>
-    </div>
-    <div class="gallery">
-      <figure>
-        <a href="assets/black-heart.jpg" target="_blank"><img src="assets/black-heart.jpg" alt="黒いハートビーズのストラップ"></a>
-        <figcaption><strong>Black Heart</strong><span>黒×シルバーのロックなストラップ</span></figcaption>
-      </figure>
-      <figure>
-        <a href="assets/pink-pearl.jpg" target="_blank"><img src="assets/pink-pearl.jpg" alt="ピンクとパールの小物入れ"></a>
-        <figcaption><strong>Pink Pearl</strong><span>レースとパールを重ねた甘い世界観</span></figcaption>
-      </figure>
-      <figure>
-        <a href="assets/flower-hairpin.jpg" target="_blank"><img src="assets/flower-hairpin.jpg" alt="白い花のヘアピン"></a>
-        <figcaption><strong>Flower Hairpin</strong><span>白いレースと小花の上品なヘアピン</span></figcaption>
-      </figure>
-      <figure>
-        <a href="assets/whip-frame.jpg" target="_blank"><img src="assets/whip-frame.jpg" alt="ホイップデコのカラフルなフレーム"></a>
-        <figcaption><strong>Whip Decoration</strong><span>透明感のある花とビーズのホイップデコ</span></figcaption>
-      </figure>
-      <figure>
-        <a href="assets/red-flower-frame.jpg" target="_blank"><img src="assets/red-flower-frame.jpg" alt="赤とワインレッドの花のフォトフレーム"></a>
-        <figcaption><strong>Red Flower Frame</strong><span>赤とワインレッドの華やかなフォトフレーム</span></figcaption>
-      </figure>
-    </div>
-  </section>
+    <!-- 上部メニュー -->
+    <a class="hit home" href="index.html" aria-label="ホーム">
+      ホーム
+    </a>
 
-  <section id="about">
-    <div class="about">
-      <h2>メレンゲ工房について</h2>
-      <p>花、リボン、パール、レースなどを使い、日常に小さなときめきを添えるハンドメイド作品を制作しています。作品の販売状況や新作は、メルカリ・Instagram・TikTokからご覧ください。</p>
-    </div>
-  </section>
-</main>
+    <a class="hit works" href="#works" aria-label="作品一覧">
+      作品一覧
+    </a>
 
-<footer>© メレンゲ工房</footer>
+    <a class="hit about" href="#about" aria-label="工房について">
+      工房について
+    </a>
+
+    <a class="hit sns" href="#sns" aria-label="ショップ・SNS">
+      ショップ・SNS
+    </a>
+
+    <!-- 作品カテゴリー -->
+    <a
+      class="hit c1"
+      href="tsumami-fabric.html"
+      aria-label="つまみ細工（布）"
+    >
+      つまみ細工（布）
+    </a>
+
+    <a
+      class="hit c2"
+      href="tsumami-paper.html"
+      aria-label="つまみ細工（紙）"
+    >
+      つまみ細工（紙）
+    </a>
+
+    <a
+      class="hit c3"
+      href="key-charm.html"
+      aria-label="キーチャーム"
+    >
+      キーチャーム
+    </a>
+
+    <a
+      class="hit c4"
+      href="beads.html"
+      aria-label="ビーズ"
+    >
+      ビーズ
+    </a>
+
+    <a
+      class="hit c5"
+      href="whip-deco.html"
+      aria-label="ホイップデコ（トレカケース）"
+    >
+      ホイップデコ（トレカケース）
+    </a>
+
+    <a
+      class="hit c6"
+      href="photo-frame.html"
+      aria-label="写真立て"
+    >
+      写真立て
+    </a>
+  </main>
 </body>
 </html>
