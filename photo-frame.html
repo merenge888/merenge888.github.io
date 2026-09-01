@@ -1,0 +1,366 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ホームページ（写真立て）｜メレンゲ工房</title>
+<style>
+:root{
+ --ink:#5b4037; --rose:#d88994; --rose2:#ebb7b6; --cream:#fff9f5;
+ --card:#fffaf7; --line:#ead7ce; --muted:#8a7066;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:var(--cream);color:var(--ink);
+ font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+ line-height:1.8;font-size:18px;
+}
+a{color:inherit}
+header{
+ position:sticky;top:0;z-index:20;background:rgba(255,249,245,.96);
+ border-bottom:1px solid var(--line);backdrop-filter:blur(8px);
+}
+.nav{
+ max-width:1050px;margin:auto;padding:10px 18px;
+ display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.logo{font-weight:700;letter-spacing:.14em;text-decoration:none;font-size:23px}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.links a{padding:9px 12px;text-decoration:none;border-radius:999px}
+.links a:hover,.links a:focus-visible{background:#f4dfdc;outline:2px solid #9b6972;outline-offset:2px}
+
+.hero{background:#f6e7e2}
+.hero img{display:block;width:100%;max-width:1200px;margin:auto;height:auto}
+.intro{
+ text-align:center;padding:42px 20px 34px;background:linear-gradient(#fffaf7,#fffdfb);
+ border-bottom:1px solid var(--line);
+}
+.eyebrow{font-size:14px;letter-spacing:.27em;margin:0 0 7px}
+.intro h1{font-size:clamp(34px,7vw,56px);letter-spacing:.14em;margin:0 0 3px}
+.roman{font-size:14px;letter-spacing:.3em;margin:0 0 18px}
+.intro p:last-child{margin:0;font-size:18px}
+
+.section{max-width:1040px;margin:auto;padding:48px 20px}
+.title{text-align:center;font-size:30px;letter-spacing:.15em;margin:0 0 30px}
+.title::before,.title::after{content:" ୨୧ ";font-size:.75em;color:#d1a39d}
+
+.genre-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.genre{
+ min-height:158px;display:flex;align-items:center;gap:20px;
+ padding:22px;border:1px solid var(--line);border-radius:18px;
+ background:linear-gradient(145deg,#fffdfb,#faeee8);text-decoration:none;
+ box-shadow:0 5px 14px rgba(97,65,53,.05)
+}
+.genre:hover,.genre:focus-visible{outline:3px solid #bc7c87;outline-offset:3px}
+.gicon{
+ width:84px;height:84px;flex:0 0 84px;border-radius:50%;
+ display:grid;place-items:center;background:#fff;border:1px solid #edddd5;font-size:38px
+}
+.gtext{min-width:0}.gname{font-size:22px;font-weight:700;margin-bottom:8px}
+.gdesc{font-size:15px;color:var(--muted);margin-bottom:10px}
+.gbtn{
+ display:inline-block;background:var(--rose);color:white;border-radius:999px;
+ padding:9px 18px;font-size:16px;font-weight:700;
+}
+.aboutwrap{background:#fffdfb;border-block:1px solid var(--line)}
+.about{max-width:820px;margin:auto;text-align:center;font-size:19px}
+
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.shop-grid a{
+ min-height:72px;display:flex;align-items:center;justify-content:center;
+ background:white;border:1px solid var(--line);border-radius:16px;
+ text-decoration:none;font-size:20px;font-weight:700
+}
+.news{max-width:800px;margin:auto}
+.news p{padding:14px 0;margin:0;border-bottom:1px dashed var(--line)}
+footer{
+ background:#e8b9b2;border-top:7px double #f8ede8;text-align:center;
+ padding:38px 20px;color:#5a4037
+}
+footer strong{font-size:27px;letter-spacing:.14em}
+.page{max-width:1000px;margin:auto;padding:34px 18px 60px}
+.back{display:inline-block;padding:11px 16px;background:#f0d8d5;border-radius:999px;text-decoration:none;font-weight:700}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.work{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.ph{aspect-ratio:1/1;background:linear-gradient(145deg,#faece8,#fff);display:grid;place-items:center;font-size:46px}
+.work p{padding:13px;margin:0;text-align:center}
+
+@media(max-width:720px){
+ body{font-size:18px}
+ header{position:relative}
+ .nav{display:block;padding:12px 12px 10px}
+ .logo{display:block;text-align:center;margin-bottom:10px;font-size:24px}
+ .links{display:grid;grid-template-columns:1fr 1fr}
+ .links a{min-height:46px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);font-size:16px}
+ .hero img{width:100%}
+ .intro{padding:30px 18px}
+ .intro h1{font-size:36px}
+ .section{padding:36px 14px}
+ .title{font-size:26px;margin-bottom:22px}
+ .genre-grid{grid-template-columns:1fr;gap:14px}
+ .genre{min-height:126px;padding:16px;gap:15px}
+ .gicon{width:68px;height:68px;flex-basis:68px;font-size:31px}
+ .gname{font-size:21px}
+ .gdesc{display:none}
+ .gbtn{font-size:17px;padding:9px 17px}
+ .shop-grid{grid-template-columns:1fr}
+ .shop-grid a{font-size:20px;min-height:64px}
+ .about{text-align:left}
+ .work-grid{grid-template-columns:1fr 1fr;gap:12px}
+}
+
+
+.photo-grid{
+ display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:18px;
+ margin-top:28px;
+}
+.photo-card{
+ background:#fff;
+ border:1px solid var(--line);
+ border-radius:16px;
+ overflow:hidden;
+ min-width:0;
+}
+.photo-frame{
+ aspect-ratio:1/1;
+ position:relative;
+ background:linear-gradient(145deg,#faece8,#fff);
+ overflow:hidden;
+}
+.photo-frame img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ display:block;
+}
+.photo-placeholder{
+ position:absolute;
+ inset:0;
+ display:grid;
+ place-items:center;
+ text-align:center;
+ padding:12px;
+ color:#9a7b70;
+ font-size:17px;
+ background:linear-gradient(145deg,#faece8,#fff);
+}
+.photo-card p{
+ margin:0;
+ padding:12px 10px 14px;
+ text-align:center;
+ font-size:17px;
+}
+.gallery-note{
+ max-width:760px;
+ margin:14px auto 0;
+ text-align:center;
+ color:#7d665d;
+ font-size:16px;
+}
+@media(max-width:850px){
+ .photo-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media(max-width:640px){
+ .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+ .photo-card p{font-size:16px;padding:10px 8px 12px}
+ .photo-placeholder{font-size:15px}
+}
+</style>
+</head>
+<body>
+<header><nav class="nav">
+<a class="logo" href="index.html">メレンゲ工房</a>
+<div class="links"><a href="index.html">ホーム</a><a href="index.html#works">作品一覧</a><a href="index.html#about">工房について</a><a href="index.html#shop">ショップ・SNS</a></div>
+</nav></header>
+
+<main class="page">
+<a class="back" href="index.html#works">← ジャンル一覧へ戻る</a>
+<h1 style="text-align:center;margin:28px 0 4px">ホームページ（写真立て）</h1>
+<p class="gallery-note">写真は20点まで入れられるようにしてあります。あとから画像ファイルを追加するだけで表示できます。</p>
+
+<div class="photo-grid">
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-01.jpg" alt="ホームページ（写真立て） 作品1">
+    <div class="photo-placeholder">写真 1<br><small>photo-frame-01.jpg</small></div>
+  </div>
+  <p>作品 1</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-02.jpg" alt="ホームページ（写真立て） 作品2">
+    <div class="photo-placeholder">写真 2<br><small>photo-frame-02.jpg</small></div>
+  </div>
+  <p>作品 2</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-03.jpg" alt="ホームページ（写真立て） 作品3">
+    <div class="photo-placeholder">写真 3<br><small>photo-frame-03.jpg</small></div>
+  </div>
+  <p>作品 3</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-04.jpg" alt="ホームページ（写真立て） 作品4">
+    <div class="photo-placeholder">写真 4<br><small>photo-frame-04.jpg</small></div>
+  </div>
+  <p>作品 4</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-05.jpg" alt="ホームページ（写真立て） 作品5">
+    <div class="photo-placeholder">写真 5<br><small>photo-frame-05.jpg</small></div>
+  </div>
+  <p>作品 5</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-06.jpg" alt="ホームページ（写真立て） 作品6">
+    <div class="photo-placeholder">写真 6<br><small>photo-frame-06.jpg</small></div>
+  </div>
+  <p>作品 6</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-07.jpg" alt="ホームページ（写真立て） 作品7">
+    <div class="photo-placeholder">写真 7<br><small>photo-frame-07.jpg</small></div>
+  </div>
+  <p>作品 7</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-08.jpg" alt="ホームページ（写真立て） 作品8">
+    <div class="photo-placeholder">写真 8<br><small>photo-frame-08.jpg</small></div>
+  </div>
+  <p>作品 8</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-09.jpg" alt="ホームページ（写真立て） 作品9">
+    <div class="photo-placeholder">写真 9<br><small>photo-frame-09.jpg</small></div>
+  </div>
+  <p>作品 9</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-10.jpg" alt="ホームページ（写真立て） 作品10">
+    <div class="photo-placeholder">写真 10<br><small>photo-frame-10.jpg</small></div>
+  </div>
+  <p>作品 10</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-11.jpg" alt="ホームページ（写真立て） 作品11">
+    <div class="photo-placeholder">写真 11<br><small>photo-frame-11.jpg</small></div>
+  </div>
+  <p>作品 11</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-12.jpg" alt="ホームページ（写真立て） 作品12">
+    <div class="photo-placeholder">写真 12<br><small>photo-frame-12.jpg</small></div>
+  </div>
+  <p>作品 12</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-13.jpg" alt="ホームページ（写真立て） 作品13">
+    <div class="photo-placeholder">写真 13<br><small>photo-frame-13.jpg</small></div>
+  </div>
+  <p>作品 13</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-14.jpg" alt="ホームページ（写真立て） 作品14">
+    <div class="photo-placeholder">写真 14<br><small>photo-frame-14.jpg</small></div>
+  </div>
+  <p>作品 14</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-15.jpg" alt="ホームページ（写真立て） 作品15">
+    <div class="photo-placeholder">写真 15<br><small>photo-frame-15.jpg</small></div>
+  </div>
+  <p>作品 15</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-16.jpg" alt="ホームページ（写真立て） 作品16">
+    <div class="photo-placeholder">写真 16<br><small>photo-frame-16.jpg</small></div>
+  </div>
+  <p>作品 16</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-17.jpg" alt="ホームページ（写真立て） 作品17">
+    <div class="photo-placeholder">写真 17<br><small>photo-frame-17.jpg</small></div>
+  </div>
+  <p>作品 17</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-18.jpg" alt="ホームページ（写真立て） 作品18">
+    <div class="photo-placeholder">写真 18<br><small>photo-frame-18.jpg</small></div>
+  </div>
+  <p>作品 18</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-19.jpg" alt="ホームページ（写真立て） 作品19">
+    <div class="photo-placeholder">写真 19<br><small>photo-frame-19.jpg</small></div>
+  </div>
+  <p>作品 19</p>
+</article>
+
+<article class="photo-card">
+  <div class="photo-frame">
+    <img src="assets/photo-frame-20.jpg" alt="ホームページ（写真立て） 作品20">
+    <div class="photo-placeholder">写真 20<br><small>photo-frame-20.jpg</small></div>
+  </div>
+  <p>作品 20</p>
+</article>
+</div>
+</main>
+<footer><strong>メレンゲ工房</strong><br>MERENGE KOUBOU</footer>
+
+<script>
+document.querySelectorAll('.photo-frame img').forEach(function(img){
+  function showFallback(){
+    img.style.display='none';
+    var ph=img.nextElementSibling;
+    if(ph) ph.style.display='grid';
+  }
+  function showImage(){
+    img.style.display='block';
+    var ph=img.nextElementSibling;
+    if(ph) ph.style.display='none';
+  }
+  if(img.complete){
+    if(img.naturalWidth>0) showImage(); else showFallback();
+  }
+  img.addEventListener('load',showImage);
+  img.addEventListener('error',showFallback);
+});
+</script>
+</body></html>
