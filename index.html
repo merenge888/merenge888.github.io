@@ -1,126 +1,46 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>メレンゲ工房｜ハンドメイド作品</title>
-  <meta name="description" content="メレンゲ工房のハンドメイド作品ギャラリー。様々なジャンルを開拓中🎀一つひとつ心を込めて制作しています。アクロスモール泉北店　フリマルシェ様にて商品を出品させていただいております。お近くの方はぜひお手に取ってご覧くださいませ🍀">
-  <meta property="og:title" content="メレンゲ工房">
-  <meta property="og:description" content="一つひとつ心を込めて制作するハンドメイド作品。">
-  <meta property="og:image" content="pink-pearl.jpg">
-  <meta name="theme-color" content="#f7e8ec">
-  <style>
-    :root{--bg:#fffafc;--ink:#3b3035;--muted:#806f76;--accent:#d88da5;--card:#fff;--line:#f0dce3}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:var(--ink);background:var(--bg);line-height:1.8}
-    a{color:inherit;text-decoration:none}
-    header{position:sticky;top:0;z-index:10;background:rgba(255,250,252,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-    .brand{font-weight:800;letter-spacing:.08em}
-    .navlinks{display:flex;gap:16px;font-size:14px}
-    .hero{max-width:1100px;margin:auto;padding:62px 20px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
-    .eyebrow{font-size:13px;letter-spacing:.2em;color:var(--accent);font-weight:700}
-    h1{font-size:clamp(42px,8vw,78px);line-height:1.05;margin:12px 0 18px;letter-spacing:.04em}
-    .lead{color:var(--muted);font-size:17px;max-width:36em}
-    .heroimg{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;box-shadow:0 18px 45px rgba(96,57,72,.14)}
-    .buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-weight:700;border:1px solid var(--line);background:white}
-    .btn.primary{background:var(--ink);color:white;border-color:var(--ink)}
-    section{max-width:1100px;margin:auto;padding:64px 20px}
-    .section-title{text-align:center;margin-bottom:28px}
-    .section-title h2{font-size:32px;margin:0 0 6px}
-    .section-title p{color:var(--muted);margin:0}
-    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 8px 24px rgba(96,57,72,.06)}
-   figure img{display:block;width:100%;height:420px;object-fit:cover}
-figure:first-child img{height:520px}
-    figcaption{padding:16px 18px}
-    figcaption strong{display:block;font-size:18px}
-    figcaption span{color:var(--muted);font-size:14px}
-    .about{background:white;border:1px solid var(--line);border-radius:26px;padding:30px}
-    .about p{color:var(--muted)}
-    footer{text-align:center;padding:34px 20px 52px;color:var(--muted);font-size:13px}
-    @media(max-width:760px){
-      .navlinks{display:none}
-      .hero{grid-template-columns:1fr;padding-top:40px}
-      .heroimg{aspect-ratio:1/1}
-      .gallery{grid-template-columns:1fr}
-      figure:first-child{grid-column:auto}
-      figure img,figure:first-child img{height:auto;aspect-ratio:4/5}
-      section{padding-top:48px;padding-bottom:48px}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>メレンゲ工房｜ハンドメイド作品</title>
+<meta name="description" content="メレンゲ工房のハンドメイド作品ギャラリー。かわいい作品からダークでかっこいい作品まで、一つひとつ心を込めて制作しています。">
+<style>
+html,body{margin:0;background:#fffaf8}
+body{font-family:"Yu Mincho","Hiragino Mincho ProN","Yu Gothic",Meiryo,serif}
+.page{position:relative;max-width:1015px;margin:0 auto}
+.page img{display:block;width:100%;height:auto}
+.hit{position:absolute;display:block;text-indent:-9999px;overflow:hidden;cursor:pointer}
+.hit:focus-visible{outline:3px solid #d98997;outline-offset:2px;border-radius:16px}
+.home{left:53.7%;top:1.8%;width:6%;height:3.4%}
+.works{left:61.4%;top:1.8%;width:7%;height:3.4%}
+.about{left:70.6%;top:1.8%;width:9%;height:3.4%}
+.sns{left:82.7%;top:1.8%;width:11%;height:3.4%}
+.c1{left:8.1%;top:51.1%;width:24.7%;height:10.3%}
+.c2{left:36.9%;top:51.1%;width:24.7%;height:10.3%}
+.c3{left:65.6%;top:51.1%;width:24.7%;height:10.3%}
+.c4{left:8.1%;top:63.0%;width:24.7%;height:10.3%}
+.c5{left:36.9%;top:63.0%;width:24.7%;height:10.3%}
+.c6{left:65.6%;top:63.0%;width:24.7%;height:10.3%}
+</style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <a class="brand" href="#top">メレンゲ工房</a>
-    <nav class="navlinks">
-      <a href="#works">作品</a>
-      <a href="#about">工房について</a>
-      <a href="#links">ショップ・SNS</a>
-    </nav>
-  </div>
-</header>
+<div class="page">
+<img src="images/homepage-exact.png" alt="メレンゲ工房">
+<a class="hit home" href="index.html">ホーム</a>
+<a class="hit works" href="#works">作品一覧</a>
+<a class="hit about" href="#about">工房について</a>
+<a class="hit sns" href="#sns">ショップ・SNS</a>
 
-<main id="top">
-  <div class="hero">
-    <div>
-      <div class="eyebrow">HANDMADE SHOP</div>
-      <h1>メレンゲ工房</h1>
-      <p class="lead">様々なジャンルを開拓中🎀一つひとつ心を込めて制作しています。アクロスモール泉北店　フリマルシェ様にて商品を出品させていただいております。お近くの方はぜひお手に取ってご覧くださいませ🍀</p>
-      <div class="buttons" id="links">
-        <a class="btn primary" href="https://jp.mercari.com/user/profile/668431290" target="_blank" rel="noopener">メルカリで見る</a>
-        <a class="btn" href="https://www.instagram.com/merenge8888" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn" href="https://www.tiktok.com/@merenge888" target="_blank" rel="noopener">TikTok</a>
-        <a class="btn" href="https://www.youtube.com/@merengetube" target="_blank" rel="noopener">YouTube</a>
-      </div>
-    </div>
-    <img class="heroimg" src="pink-pearl.jpg" alt="パールとレースのハンドメイド作品">
-  </div>
+<a class="hit c1" id="works" href="tsumami-fabric.html">つまみ細工（布）</a>
+<a class="hit c2" href="tsumami-paper.html">つまみ細工（紙）</a>
+<a class="hit c3" href="key-charm.html">キーチャーム</a>
+<a class="hit c4" href="beads.html">ビーズ</a>
+<a class="hit c5" href="whip-deco.html">ホイップデコ（トレカケース）</a>
+<a class="hit c6" href="photo-frame.html">ホームページ（写真立て）</a>
 
-  <section id="works">
-    <div class="section-title">
-      <h2>作品ギャラリー</h2>
-      <p>写真をタップすると大きく表示できます。</p>
-    </div>
-    <div class="gallery">
-      <figure>
-        <a href="hoippudeco.jpg" target="_blank"><img src="hoippudeco.jpg" alt="まるで生クリーム！ホイップデコレーションの写真立て❤"></a>
-        <figcaption><strong>hoippudecot</strong><span>ケーキのような甘い外観</span></figcaption>
-      </figure>
-      <figure>
-        <a href="pink-pearl.jpg" target="_blank"><img src="pink-pearl.jpg" alt="ピンクとパールの小物入れ"></a>
-        <figcaption><strong>Pink Pearl</strong><span>レースとパールを重ねた甘い世界観</span></figcaption>
-      </figure>
-      <figure>
-        <a href="flower-hairpin.jpg" target="_blank"><img src="flower-hairpin.jpg" alt="白い花のヘアピン"></a>
-        <figcaption><strong>Flower Hairpin</strong><span>白いレースと小花の上品なヘアピン</span></figcaption>
-      </figure>
-      <figure>
-        <a href="whip-frame.jpg" target="_blank"><img src="whip-frame.jpg" alt="ホイップデコのカラフルなフレーム"></a>
-        <figcaption><strong>Whip Decoration</strong><span>透明感のある花とビーズのホイップデコ</span></figcaption>
-      </figure>
-      <figure>
-        <a href="red-flower-frame.jpg" target="_blank"><img src="red-flower-frame.jpg" alt="赤とワインレッドの花のフォトフレーム"></a>
-        <figcaption><strong>Red Flower Frame</strong><span>赤とワインレッドの華やかなフォトフレーム</span></figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="about">
-      <h2>メレンゲ工房について</h2>
-      <p>大学生ハンドメイド作家です♡個人で活動をしております。メインはつまみ細工です。
-        大学生活を送りながら主にキークリップを製作しています🐻なくしものの多い私にはキークリップが必須アイテムです笑　
-        ホイップデコの作品も次々製作中🎀トレカケースや写真立てをデコっています💖
-        アクロスモール泉北店のフリマルシェ様にて出品させて頂いております🍀
-      お近くの方はぜひ店舗で商品をお手に取っていただけますと幸いです🕊</p>
-    </div>
-  </section>
-</main>
-
-<footer>© メレンゲ工房</footer>
+<span id="about" style="position:absolute;left:0;top:27%"></span>
+<span id="sns" style="position:absolute;left:0;top:87%"></span>
+</div>
 </body>
 </html>
